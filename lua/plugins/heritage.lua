@@ -6,6 +6,6 @@ return {
   },
   {
     "LazyVim/LazyVim",
-    opts = { colorscheme = "heritage-holi-night" },
+    opts = { colorscheme = "heritage-shuimo-night" },
   },
 }
