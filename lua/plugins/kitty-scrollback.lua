@@ -14,6 +14,10 @@ return {
           vim.cmd('normal! "+y')
           require("kitty-scrollback.api").quit_all()
         end, { desc = "Copy selection and leave copy mode" })
+        -- `y` yanks to the system clipboard; the plugin then returns to kitty.
+        -- Without this, `y` opens the paste window instead.
+        vim.keymap.set({ "n", "x" }, "y", '"+y', { desc = "Yank to clipboard and leave copy mode" })
+        vim.keymap.set("n", "Y", '"+y$', { desc = "Yank to end of line to clipboard and leave copy mode" })
       end
     end,
   },
